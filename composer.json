@@ -1,0 +1,14 @@
+{
+    "name": "tai/php2",
+    "type": "project",
+    "authors": [
+        {
+            "name": "ledinhhuutai",
+            "email": "ledinhhuutaii@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"App\\": "app/"}
+    }
+}
