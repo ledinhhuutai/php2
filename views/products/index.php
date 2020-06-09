@@ -14,6 +14,7 @@
 				<th scope="col">Price</th>
 				<th scope="col">Image</th>
 				<th scope="col">Quantity</th>
+				<th scope="col">Action</th>
 			</thead>
 			<tbody>
 			<?php foreach ($products as $p): ?>
@@ -23,6 +24,11 @@
 				      <td><?= $p['price'];?></td>
 				      <td><img src="<?= $p['image'];?>" class="img-thumbnail"></td>
 				      <td><?= $p['quantity'];?></td>
+				      <td>
+				      	<a href="<?= BASE_URL . "product/update?id=" . $p['id']?>">
+				      		<button class="btn-sm btn-success">Update</button>
+				     	</a>
+				      </td>
 				</tr>
 			<?php endforeach ?>
 			</tbody>

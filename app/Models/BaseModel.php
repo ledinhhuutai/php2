@@ -18,10 +18,14 @@ class BaseModel {
 		return $stmt->fetchAll();
 	}
 
-	public static function find ($id) {
-		$model = new static;
-		$query = "select * from " . $model->table . " where id='$id' ";
-		var_dump($query);
+	public static function find($id){
+        $model = new static();
+        $query = "select * from " . $model->table . " where id = '$id'";
+        // var_dump($query);
+        $stmt = $model->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch();
 	}
+     
 
 }

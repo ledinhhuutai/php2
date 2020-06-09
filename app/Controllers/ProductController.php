@@ -16,7 +16,31 @@ class ProductController {
 
 	}
 
-	public function find() {
-		$model = Product::find(1);
+	public function saveCreate() {
+		$col = "";
+		$model = new Product();
+
+		$name = $_POST['name'];
+		$price = $_POST['price'];
+		$quantity = $_POST['quantity'];
+
+		foreach ($model->fillable as $fill) {
+			$col .= "$fill, ";
+
+		}
+		
+		$col = rtrim($col, ", ");
+		$query = "INSERT INTO " . $model->table .  " ($col)" . " VALUES " . "('$name', $price, $quantity)";
+		$stmt = $model->conn->prepare($query);
+		$stmt->execute();
+		header('location:' . BASE_URL . "product");
+	}
+
+	public function update () {
+		$id = $_GET['id'];
+		$product = Product::find($id);
+		echo "<pre>";
+		var_dump($product);
+		die;
 	}
 }

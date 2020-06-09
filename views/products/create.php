@@ -7,28 +7,23 @@
 </head>
 <body>
 	<div class="container">
-		<form action="" method="post" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-6">
-					<div class="form-group">
-					<label>Name</label>
-						<input type="text" name="name" class="form-control">
-					</div>
-					<div class="form-group">
-						<label>Price</label>
-						<input type="text" name="price" class="form-control">
-					</div>
-					<div class="form-group">
-						<label>Quantity</label>
-						<input type="text" name="quantity" class="form-control">
-					</div>
+		<form action="<?= BASE_URL . "product/save-create"; ?>" method="post" enctype="multipart/form-data">
+			<div class="col-6">
+				<div class="form-group">
+				<label>Name</label>
+					<input type="text" name="name" class="form-control">
 				</div>
-				<div class="col-6">
-					<div class="form-group">
-						<label>Image</label>
-						<br>
-						<input type="file" name="image" >
-					</div>
+				<div class="form-group">
+					<label>Price</label>
+					<input type="text" name="price" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Quantity</label>
+					<input type="text" name="quantity" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Image</label>
+					<input type="file" name="image">
 				</div>
 			</div>
 			<button class="btn btn-primary">Create</button>
