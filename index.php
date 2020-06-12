@@ -29,6 +29,10 @@ switch ($url) {
 	case 'product/update': 
 		$ctr = new ProductController();
 		echo $ctr->update();
+		break;
+	case 'product/save-update':
+		$ctr = new ProductController();
+		echo $ctr->saveUpdate();
 		break;	
 	default:
 		echo "404 Not Found";

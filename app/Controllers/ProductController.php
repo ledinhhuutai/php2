@@ -39,8 +39,28 @@ class ProductController {
 	public function update () {
 		$id = $_GET['id'];
 		$product = Product::find($id);
-		echo "<pre>";
-		var_dump($product);
+		include './views/products/update.php';
+	}
+
+	public function saveUpdate () {
+		$col = "";
+		$model = Product::find($_POST['id']);
+		var_dump($model);
 		die;
+
+		$name = $_POST['name'];
+		$price = $_POST['price'];
+		$quantity = $_POST['quantity'];
+
+		foreach ($model->fillable as $fill) {
+			$col .= "$fill, ";
+
+		}
+		
+		$col = rtrim($col, ", ");
+		$query = "update " . $model->table . "SET"  . ("$col") . "where id = $model->id";
+		var_dump($query);
+		die;
+
 	}
 }
